@@ -49,10 +49,10 @@ const getProduct = async (req, res, next) => {
     console.log(error);
   }
 };
-const findProductName = async (req, res, next) => {
+const findProductByName = async (req, res, next) => {
   try {
     const name = req.query.name;
-    const product = await ProductRepo.findProduct(name);
+    const product = await ProductRepo.findProductByName(name);
     if (!product) {
       return res.status(400).json({ message: "Product not found" });
     }
@@ -198,7 +198,7 @@ const createReview = async (req, res, next) => {
 module.exports = {
   getProduct,
   getAllProducts,
-  findProductName,
+  findProductByName,
   findProductByFilter,
   createProduct,
   createReview,

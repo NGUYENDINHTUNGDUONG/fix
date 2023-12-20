@@ -26,7 +26,7 @@ router.delete(
   verify.verifyAdmin,
   productController.deleteProduct
 );
-router.get("/search", productController.findProductName);
+router.get("/search", productController.findProductByName);
 router.get("/type", productController.getAllTypes);
 router.get("/caliber", productController.getAllCalibers);
 router.get("/filter", productController.findProductByFilter);

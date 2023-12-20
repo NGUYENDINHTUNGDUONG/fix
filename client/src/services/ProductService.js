@@ -77,7 +77,7 @@ export const deleteProduct = async (id, access_token) => {
 
 export const getAllTypesProduct = async () => {
   try {
-    const res = await axiosJWT.get(
+    const res = await axios.get(
       `${process.env.REACT_APP_API_URL}/product/type`
     );
     return res.data;
@@ -87,7 +87,7 @@ export const getAllTypesProduct = async () => {
 };
 export const getAllCaliberProduct = async () => {
   try {
-    const res = await axiosJWT.get(
+    const res = await axios.get(
       `${process.env.REACT_APP_API_URL}/product/caliber`
     );
     return res.data;

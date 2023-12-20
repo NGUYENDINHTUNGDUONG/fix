@@ -44,23 +44,23 @@ const NavBarComponent = () => {
   };
 
   useEffect(() => {
-    if (category === undefined) {
-      setDefaultRadioValue();
-      setCaliberValue("");
-      setTypeValue("");
-      setMinRating(null);
-      dispatch(
-        searchProduct({
-          ["category"]: "",
-          ["caliber"]: caliberValue,
-          ["type"]: typeValue,
-          ["minRating"]: minRating,
-          ["minPrice"]: price[0],
-          ["maxPrice"]: price[1],
-          ["brand"]: brandValue,
-        })
-      );
-    } else {
+    // if (category === undefined) {
+    //   setDefaultRadioValue();
+    //   setCaliberValue("");
+    //   setTypeValue("");
+    //   setMinRating(null);
+    //   dispatch(
+    //     searchProduct({
+    //       ["category"]: "",
+    //       ["caliber"]: caliberValue,
+    //       ["type"]: typeValue,
+    //       ["minRating"]: minRating,
+    //       ["minPrice"]: price[0],
+    //       ["maxPrice"]: price[1],
+    //       ["brand"]: brandValue,
+    //     })
+    //   );
+    // } else {
       setDefaultRadioValue(category);
       dispatch(
         searchProduct({
@@ -75,7 +75,8 @@ const NavBarComponent = () => {
       );
       dispatch(searchBrand({ brand: brandValue }));
     }
-  }, [category, caliberValue, typeValue, minRating, price, brandValue]);
+  // }
+  , [category, caliberValue, typeValue, minRating, price, brandValue]);
   useEffect(() => {
     getAllTypesProduct();
     getAllCaliberProduct();

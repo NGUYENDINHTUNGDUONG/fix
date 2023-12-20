@@ -1,9 +1,12 @@
 const Product = require("../models/ProductModel");
 
-const findProduct = async (name) => {
+const findProductByName = async (name) => {
   console.log(name);
   return await Product.find({ name: { $regex: name, $options: "i" } });
 };
+const findProduct = async (filters) => {
+  return await Product.findOne(filters);
+}
 
 const createProduct = async (product) => {
   const newProduct = new Product(product);
@@ -98,6 +101,7 @@ module.exports = {
   updateProduct,
   deleteProduct,
   findProduct,
+  findProductByName,
   getAllProducts,
   getAllBrands,
   getAllTypes,
